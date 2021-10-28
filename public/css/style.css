@@ -147,14 +147,6 @@ table tr:last-child td {
   box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
 }
 
-table tr:last-child td:first-child {
-  border-radius: 0 0 0 5px;
-}
-
-table tr:last-child td:last-child {
-  border-radius: 0 0 5px 0;
-}
-
 #index_table tr:hover {
   background:#F07057;
   cursor:pointer;
@@ -216,9 +208,15 @@ color: #333;
 
 #edit_table th{
   font-size: 18px;
+  border: groove;
+  border-radius: 0;
   vertical-align: middle;
 }
 
 .edit_btn{
   text-align: center;
+}
+
+.pagination{
+  display: flex;
 }
