@@ -64,7 +64,8 @@
       <th>在籍ステータス</th>
         <td>
           <select name="retire">
-            <option value="在籍">在籍</option>
+            <option value="在籍(CD社員)">在籍(CD社員)</option>
+            <option value="在籍(DB社員)">在籍(DB社員)</option>
             <option value="退職済み">退職済み</option>
           </select>
         </td>

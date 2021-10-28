@@ -27,28 +27,32 @@
         <th>名前</th>
         <th>カリキュラム進捗</th>
         <th>状況</th>
-        <th></th>
+        <th>担当営業が入る予定</th>
     <tr>
-    @if (!empty($student))
-        @foreach($student as $student)
-        <tr>
+    @if (!empty($students))
+        @foreach($students as $student)
+        <tr data-href="/edit/{{ $student->student_id}}">
             <td>{{ $student->student_name }}</td>
             <td>{{ $student->progress }}</td>
             <td>{{ $student->retire }}</td>
-            <td><a href="/edit/{{ $student->student_id}}">ステータス更新</a></td>
+            <td></td>
+            </a>
         </tr>
         @endforeach
+        {{ $students->links() }}
     @elseif (!empty($searchName))
         @foreach($searchName as $student)
-        <tr>
+        <tr data-href="/edit/{{ $student->student_id}}">
             <td>{{ $student->student_name }}</td>
             <td>{{ $student->progress }}</td>
             <td>{{ $student->retire }}</td>
-            <td><a href="/edit/{{ $student->student_id}}">ステータス更新</a></td>
+            <td></td>
+            </a>
         </tr>
         @endforeach
     @endif
 </table>
+
 
 
 @endsection

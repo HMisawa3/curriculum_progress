@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Illuminate\Pagination\Paginator;
 
 
 class StudentController extends Controller
 {
     public function index(Request $request){
-        $student = Student::get();
+        $students = Student::paginate(8);
         if($request->isMethod('post')){
             $search_word = $request->input('search_name');
             $searchName = Student::select()
@@ -17,7 +18,7 @@ class StudentController extends Controller
             ->get();
             return view('student.index', compact('searchName'));
         } else {
-        return view('student.index', compact('student'));
+        return view('student.index', compact('students'));
         }
     }
 
