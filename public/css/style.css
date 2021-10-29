@@ -7,7 +7,7 @@ body{
 header{
   padding-top: 40px;
   position: relative;
-  height: 30vh;
+  height: 25vh;
   background-color:#F07057;
   color: cornsilk;
 }
@@ -32,7 +32,7 @@ header{
 /* フッター */
 footer{
   position: relative;
-  height: 20vh;
+  height: 10vh;
   width: 100%;
   background-color:#F07057;
   color: cornsilk;
@@ -96,6 +96,10 @@ input:focus{
   border-spacing: 0;
   font-size:14px;
   *border-collapse: collapse;
+}
+
+.student_name{
+  font-size: 20px;
 }
 
 table th {

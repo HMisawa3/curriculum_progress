@@ -25,3 +25,5 @@ Route::post('/create', [StudentController::class, 'create']);
 Route::get('/edit/{id}', [StudentController::class, 'edit']);
 Route::post('/edit/{id}', [StudentController::class, 'edit']);
 
+Route::get('/sort', [StudentController::class, 'sort']);
+

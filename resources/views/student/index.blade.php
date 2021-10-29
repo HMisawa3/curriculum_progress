@@ -25,9 +25,11 @@
 <table id="index_table">
     <tr>
         <th>名前</th>
-        <th>カリキュラム進捗</th>
-        <th>状況</th>
-        <th>担当営業が入る予定</th>
+        <th>カリキュラム進捗<a href="/sort">&nbsp;&nbsp;s</a></th>
+        <th>在籍</th>
+        <!-- <th>担当営業が入る予定</th> -->
+        <th>最終来社日</th>
+        <th>最終質問日(ChatLuck)</th>
     <tr>
     @if (!empty($students))
         @foreach($students as $student)
@@ -35,21 +37,16 @@
             <td>{{ $student->student_name }}</td>
             <td>{{ $student->progress }}</td>
             <td>{{ $student->retire }}</td>
-            <td></td>
-            </a>
+            <!-- <td></td> -->
+            @if($student->last_visit_date == NULL)
+            <td>まだオフィス来社はありません</td>
+            @else
+            <td>{{ $student->last_visit_date }}</td>
+            @endif
+            <td>{{ $student->last_question_date }}</td>
         </tr>
         @endforeach
         {{ $students->links() }}
-    @elseif (!empty($searchName))
-        @foreach($searchName as $student)
-        <tr data-href="/edit/{{ $student->student_id}}">
-            <td>{{ $student->student_name }}</td>
-            <td>{{ $student->progress }}</td>
-            <td>{{ $student->retire }}</td>
-            <td></td>
-            </a>
-        </tr>
-        @endforeach
     @endif
 </table>
 
