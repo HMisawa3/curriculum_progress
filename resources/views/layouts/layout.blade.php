@@ -14,16 +14,17 @@
     <!--サイトのアイコン指定-->
     <link rel="icon" href="画像URL" sizes="62x62" type="image/png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
 </head>
 
 <body>
     <header id="container">
         <div class="main-title">DAWN CURRICULUM</div>
         <div class="subtitle">~カリキュラム生に寄り添う講師でありたい~</div>
-        @if (!empty($searchName))
+        @if (!empty($search_word))
             <a class="return" href="/">＜＜一覧表示へ戻る</a>
         @elseif(!empty($studentInfo['student_id']))
+            <a class="return" href="/">＜＜一覧表示へ戻る</a>
+        @elseif(Request::is('sort'))
             <a class="return" href="/">＜＜一覧表示へ戻る</a>
         @endif
     </header>

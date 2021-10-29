@@ -7,6 +7,10 @@
 {{ csrf_field() }}
   <table id="edit_table">
     <tr>
+      <th>名前</th>
+        <td class="student_name">{{ $studentInfo->student_name }}</td>
+    </tr>
+    <tr>
       <th>~進捗~</th>
         <td>
 @if(!empty($studentInfo->progress))
@@ -71,8 +75,12 @@
         </td>
     </tr>
     <tr>
-      <th>メモ</th>
-        <td><textarea name="memo" rows="4" cols="40">{{ $studentInfo['memo'] }}</textarea></td>
+      <th>最終来社日</th>
+        <td><input type="date" name="last_visit_date" value="{{ $studentInfo['last_visit_date'] }}" rows="4" cols="40"></td>
+    </tr>
+    <tr>
+      <th>最終質問日(chatluck)</th>
+        <td><input type="date" name="last_question_date" value="{{ $studentInfo['last_question_date'] }}" rows="4" cols="40"></td>
     </tr>
     <tr>
       <td class="edit_btn" colspan="2">
