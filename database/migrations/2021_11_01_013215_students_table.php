@@ -22,8 +22,8 @@ class StudentsTable extends Migration
             $table->string('retire', 255)->nullable();
             $table->date('last_visit_date')->nullable();
             $table->date('last_question_date')->nullable();
-            $table->timestamps('created_at')->nullable();
-            $table->timestamps('updated_at')->nullable();
+            $table->timestamp('updated_at')->useCurrent()->nullable();
+            $table->timestamp('created_at')->useCurrent()->nullable();
         });
     }
 
