@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ secure_asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+    <!-- ↑ローカル開発するときはassetに戻さないと動かない -->
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--サイトのアイコン指定-->
